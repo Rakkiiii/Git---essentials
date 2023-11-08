@@ -6,7 +6,7 @@ lis.forEach(node =>{
         const value = node.innerText.trim();
         //This value is more important
         const result = document.querySelector(".result");
-        // $result.innerText = value;//value must be neglicated
+        // $result.innerText = value;//value is neglicated
         const resultText = result.innerText.trim();
          
         if (value == '='){
