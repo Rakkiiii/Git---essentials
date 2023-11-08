@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final project 50</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <style>
+
+        body{
+            background-color:#f5f5f5;
+            text-align:center;
+        }
+       .letter{
+        font-family:Agbalumo;
+        font-size:90px;
+        display:inline-block;
+        color:#999;
+        transition: 1.5s ease-in-out;
+      }
+      .letter.active{
+        transform:scale(1.5) rotate(20deg);
+        color:red;
+      }
+      
+
+    </style>
+</head>
+<body>
+   <h1>Final Project</h1> 
+   <script>
+
+    const h1 = document.querySelector("h1");
+    const letters = h1.innerHTML.split('');
+
+    let html =""
+
+    letters.forEach(letters =>{
+        let classes ='';
+        if(letters !== ' '){
+            classes = "letter js-letter"
+        }
+        html = html +`<span class="${classes}">${letters}</span>`;
+    })
+    h1.innerHTML = html;
+    
+    const jsLetters = document.querySelectorAll(".js-letter");
+    jsLetters.forEach(node =>{
+        node.addEventListener('mouseover',function(event){
+            // console.log(this.innerText);
+            this.classList.add("active");
+        })
+        node.addEventListener('mouseout',function(event){
+            // console.log("out");
+            this.classList.remove("active");
+        })
+    })
+
+
+    
+
+    
+
+
+
+
+
+   </script>
+</body>
+</html>
